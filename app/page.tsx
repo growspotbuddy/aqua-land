@@ -57,10 +57,10 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* 3. Hero */}
+      {/* 3. Hero — height = viewport minus topbar(~36px) + nav(72px) so fold lands exactly at section bottom */}
       <section id="hero" style={{
-        height: '100vh',
-        minHeight: '700px',
+        height: 'calc(100vh - 108px)',
+        minHeight: '580px',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
@@ -73,7 +73,7 @@ export default function Home() {
 
         {/* Hero content */}
         <div style={{ position: 'relative', zIndex: 2, width: '100%' }}>
-          <div style={{ padding: '0 80px 56px', maxWidth: '780px' }}>
+          <div style={{ padding: '0 80px 14px', maxWidth: '780px' }}>
             {/* Badge */}
             <div style={{
               display: 'inline-block',
@@ -84,38 +84,39 @@ export default function Home() {
               fontWeight: 700,
               letterSpacing: '0.18em',
               textTransform: 'uppercase',
-              padding: '6px 16px',
+              padding: '5px 14px',
               borderRadius: '50px',
-              marginBottom: '24px',
+              marginBottom: '14px',
             }}>
               ★ FŐSZEZÓN NYITVA
             </div>
             <h1 style={{
               fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
-              fontSize: '96px',
+              fontSize: '80px',
               fontWeight: 900,
               color: '#FFFFFF',
               textTransform: 'uppercase',
               lineHeight: 0.95,
               textShadow: '0 2px 24px rgba(0,0,0,0.4)',
-              marginBottom: '28px',
+              marginBottom: '14px',
             }}>
               A legjobb<br />nap az évből?<br />Ma az.
             </h1>
             <p style={{
-              fontSize: '19px',
+              fontSize: '16px',
               fontWeight: 500,
               color: 'rgba(255,255,255,0.9)',
               maxWidth: '560px',
-              lineHeight: 1.5,
+              lineHeight: 1.4,
               fontFamily: 'var(--font-barlow), Barlow, sans-serif',
+              margin: 0,
             }}>
-              Aquapark, termál, mozi a vízben · hozd el mindenkit, és csináljatok emlékeket, amiket nem lehet elfelejteni.
+              Aquapark, termál, mozi a vízben · hozd el mindenkit, és csináljatok emlékeket.
             </p>
           </div>
 
           {/* BookingBar - glassmorphism panel floating over hero photo */}
-          <div style={{ padding: '0 48px 52px', width: '100%', boxSizing: 'border-box' }}>
+          <div style={{ padding: '0 48px 20px', width: '100%', boxSizing: 'border-box' }}>
             <BookingBar />
           </div>
         </div>
@@ -191,9 +192,9 @@ export default function Home() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
           {[
-            { img: '/photos/play.jpg', badge: 'Gyerekeknek', title: 'Gyerekparadicsom', text: 'Csúszdák, vizes játékok, vidámság egész nap · a kicsik imádják.' },
-            { img: '/photos/termal.jpg', badge: 'Felnőtteknek', title: 'Töltsd fel magad', text: 'Termálvíz, onsen, floating · ahol a test és az elme megpihen.' },
-            { img: '/photos/slide-action.jpg', badge: 'Adrenalin', title: 'Nem unatkozunk itt', text: 'A legmagasabb csúszdák, a legtöbb pálya · adrenalin a tetőfokig.' },
+            { img: '/photos/gyerek-paradicsom.jpg', badge: 'Gyerekeknek', title: 'Gyerekparadicsom', text: 'Csúszdák, vizes játékok, vidámság egész nap · a kicsik imádják.' },
+            { img: '/photos/hero-main.jpg', badge: 'Felnőtteknek', title: 'Töltsd fel magad', text: 'Termálvíz, onsen, floating · ahol a test és az elme megpihen.' },
+            { img: '/photos/people2.jpg', badge: 'Adrenalin', title: 'Nem unatkozunk itt', text: 'A legmagasabb csúszdák, a legtöbb pálya · adrenalin a tetőfokig.' },
           ].map((card, i) => (
             <div key={i} style={{
               height: '380px',
@@ -289,7 +290,7 @@ export default function Home() {
           </div>
           {/* Card 2 */}
           <div style={{ borderRadius: '12px', overflow: 'hidden', position: 'relative', cursor: 'pointer' }}>
-            <img src="/photos/aerial1.jpg" alt="Caracalla Termál" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s', display: 'block' }} />
+            <img src="/photos/termal.jpg" alt="Caracalla Termál" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s', display: 'block' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,15,28,0.9) 0%, transparent 60%)' }} />
             <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '24px' }}>
               <h3 style={{ fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif', fontSize: '24px', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', marginBottom: '8px' }}>Caracalla Termál</h3>
@@ -299,7 +300,7 @@ export default function Home() {
           </div>
           {/* Card 3 */}
           <div style={{ borderRadius: '12px', overflow: 'hidden', position: 'relative', cursor: 'pointer' }}>
-            <img src="/photos/pool2.jpg" alt="Aqua Cinema" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s', display: 'block' }} />
+            <img src="/photos/event-aqua-cinema.jpg" alt="Aqua Cinema" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s', display: 'block' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,15,28,0.9) 0%, transparent 60%)' }} />
             <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '24px' }}>
               <h3 style={{ fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif', fontSize: '24px', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', marginBottom: '8px' }}>Aqua Cinema</h3>
