@@ -500,100 +500,108 @@ export default function Home() {
         clipPath: 'polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%)',
         marginTop: '-40px',
         padding: '120px 80px 140px',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '60px',
-        alignItems: 'start',
       }}>
-        <div>
-          <div style={{
-            fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
-            fontSize: '13px',
-            fontWeight: 700,
-            color: 'rgba(255,255,255,0.7)',
-            textTransform: 'uppercase',
-            letterSpacing: '0.2em',
-            marginBottom: '16px',
-          }}>
-            Programok &amp; Ajánlatok
-          </div>
-          <h2 style={{
-            fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
-            fontSize: '72px',
-            fontWeight: 900,
-            color: '#FFFFFF',
-            textTransform: 'uppercase',
-            lineHeight: 0.95,
-            marginBottom: '24px',
-          }}>
-            A nyár<br />nem vár.
-          </h2>
-          <p style={{
-            fontSize: '18px',
-            fontWeight: 500,
-            color: 'rgba(255,255,255,0.85)',
-            maxWidth: '560px',
-            lineHeight: 1.6,
-            fontFamily: 'var(--font-barlow), Barlow, sans-serif',
-            marginBottom: '40px',
-          }}>
-            Szezonális programok, különleges belépők, wellness weekendek · mindig van ok visszajönni.
-          </p>
-          <a href="#" style={{
-            display: 'inline-block',
-            background: '#0F172A',
-            color: '#FFFFFF',
-            textDecoration: 'none',
-            padding: '14px 32px',
-            borderRadius: '50px',
-            fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
-            fontSize: '16px',
-            fontWeight: 700,
-            textTransform: 'uppercase',
-            letterSpacing: '0.04em',
-          }}>
-            Aktuális ajánlatok
-          </a>
+        <div style={{
+          fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
+          fontSize: '13px',
+          fontWeight: 700,
+          color: 'rgba(255,255,255,0.7)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.25em',
+          marginBottom: '16px',
+        }}>
+          Programok &amp; Ajánlatok
         </div>
-        <div style={{ display: 'grid', gap: '16px' }}>
+        <h2 style={{
+          fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
+          fontSize: '72px',
+          fontWeight: 900,
+          color: '#FFFFFF',
+          textTransform: 'uppercase',
+          lineHeight: 0.95,
+          letterSpacing: '-0.02em',
+          marginBottom: '20px',
+        }}>
+          A nyár<br />nem vár.
+        </h2>
+        <p style={{
+          fontSize: '18px',
+          fontWeight: 500,
+          color: 'rgba(255,255,255,0.85)',
+          maxWidth: '560px',
+          lineHeight: 1.6,
+          fontFamily: 'var(--font-barlow), Barlow, sans-serif',
+          marginBottom: '40px',
+        }}>
+          Szezonális programok, különleges belépők, wellness weekendek · mindig van ok visszajönni.
+        </p>
+        {/* 3-column photo event cards */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '40px' }}>
           {[
-            { date: 'Júl 4-6', title: 'Splash Festival', text: '3 napos vizes fesztivál, zenével, DJ-kkel és éjszakai úszással.' },
-            { date: 'Júl 12', title: 'Aqua Cinema éjjel', text: 'Filmvetítés a vízben, naplemente után. Hozd a matracod!' },
-            { date: 'Aug 1-31', title: 'Wellness hónap', text: 'Termál belépő + reggeli csomag kedvezményes áron egész augusztusban.' },
+            { date: 'Júl 4-6', title: 'Splash Festival', text: '3 napos vizes fesztivál, zenével, DJ-kkel és éjszakai úszással.', photo: '/photos/event-splash-festival.jpg' },
+            { date: 'Júl 12', title: 'Aqua Cinema éjjel', text: 'Filmvetítés a vízben, naplemente után. Hozd a matracod!', photo: '/photos/event-aqua-cinema.jpg' },
+            { date: 'Aug 1-31', title: 'Wellness hónap', text: 'Termál belépő + reggeli csomag kedvezményes áron egész augusztusban.', photo: '/photos/event-wellness.jpg' },
           ].map((ev, i) => (
             <div key={i} style={{
-              background: 'rgba(255,255,255,0.15)',
-              border: '1px solid rgba(255,255,255,0.25)',
+              position: 'relative',
+              height: '320px',
               borderRadius: '12px',
-              padding: '24px',
+              overflow: 'hidden',
+              border: '1px solid rgba(255,255,255,0.25)',
             }}>
-              <div style={{
-                fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
-                fontSize: '13px',
-                fontWeight: 700,
-                color: '#FBBF24',
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                marginBottom: '8px',
-              }}>
-                {ev.date}
+              {/* Photo background */}
+              <img
+                src={ev.photo}
+                alt={ev.title}
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+              {/* Dark gradient overlay */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.4) 55%, rgba(15,23,42,0.1) 100%)' }} />
+              {/* Content */}
+              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '24px' }}>
+                <div style={{
+                  fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
+                  fontSize: '13px',
+                  fontWeight: 700,
+                  color: '#FBBF24',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  marginBottom: '8px',
+                }}>
+                  {ev.date}
+                </div>
+                <h3 style={{
+                  fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
+                  fontSize: '22px',
+                  fontWeight: 700,
+                  color: '#FFFFFF',
+                  textTransform: 'uppercase',
+                  marginBottom: '8px',
+                }}>
+                  {ev.title}
+                </h3>
+                <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.85)', fontFamily: 'var(--font-barlow), Barlow, sans-serif', lineHeight: 1.5 }}>
+                  {ev.text}
+                </p>
               </div>
-              <h3 style={{
-                fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
-                fontSize: '22px',
-                fontWeight: 700,
-                color: '#FFFFFF',
-                textTransform: 'uppercase',
-                marginBottom: '8px',
-              }}>
-                {ev.title}
-              </h3>
-              <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.75)', fontFamily: 'var(--font-barlow), Barlow, sans-serif', lineHeight: 1.5 }}>
-                {ev.text}
-              </p>
             </div>
           ))}
         </div>
+        <a href="#" style={{
+          display: 'inline-block',
+          background: '#0F172A',
+          color: '#FFFFFF',
+          textDecoration: 'none',
+          padding: '16px 36px',
+          borderRadius: '50px',
+          fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
+          fontSize: '17px',
+          fontWeight: 700,
+          textTransform: 'uppercase',
+          letterSpacing: '0.06em',
+        }}>
+          Aktuális ajánlatok
+        </a>
       </section>
 
       {/* 12. Accommodation */}
