@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --sky: #0285C7;
+  --sky-dark: #0169a0;
+  --orange: #F97316;
+  --orange-dark: #ea6d0f;
+  --yellow: #FBBF24;
+  --dark: #0F172A;
+  --dark-mid: #1e293b;
+  --white: #FFFFFF;
+}
+
+@theme {
+  --color-sky: #0285C7;
+  --color-sky-dark: #0169a0;
+  --color-orange: #F97316;
+  --color-orange-dark: #ea6d0f;
+  --color-yellow: #FBBF24;
+  --color-dark: #0F172A;
+  --color-dark-mid: #1e293b;
+  --font-condensed: "Barlow Condensed", sans-serif;
+  --font-barlow: "Barlow", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Barlow', system-ui, sans-serif;
+  color: #0F172A;
+  background: #FFFFFF;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
