@@ -114,8 +114,10 @@ export default function Home() {
             </p>
           </div>
 
-          {/* BookingBar - full width at bottom of hero */}
-          <BookingBar />
+          {/* BookingBar - glassmorphism panel floating over hero photo */}
+          <div style={{ padding: '0 48px 52px', width: '100%', boxSizing: 'border-box' }}>
+            <BookingBar />
+          </div>
         </div>
       </section>
 

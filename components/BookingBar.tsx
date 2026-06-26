@@ -97,11 +97,13 @@ export default function BookingBar() {
 
   return (
     <div style={{
-      background: 'rgba(15,23,42,0.92)',
-      backdropFilter: 'blur(12px)',
-      WebkitBackdropFilter: 'blur(12px)',
+      background: 'rgba(15,23,42,0.88)',
+      backdropFilter: 'blur(16px)',
+      WebkitBackdropFilter: 'blur(16px)',
       borderTop: '3px solid #F97316',
+      borderRadius: '14px',
       width: '100%',
+      boxShadow: '0 8px 40px rgba(0,0,0,0.45)',
     }}>
       {/* Tabs row */}
       <div style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex' }}>
