@@ -86,7 +86,7 @@ export default function Home() {
               textShadow: '0 2px 24px rgba(0,0,0,0.4)',
               marginBottom: '20px',
             }}>
-              Ide kell jönni<br />legalább egyszer.
+              Csúszda, termál,<br />mozi a vízben.<br />Egyszerre, egy helyen.
             </h1>
             <p className="hero-sub" style={{
               fontSize: '18px',
@@ -97,7 +97,7 @@ export default function Home() {
               fontFamily: 'var(--font-barlow), Barlow, sans-serif',
               margin: 0,
             }}>
-              Csúszdák, termálvíz, film a vízben · egy helyen minden, amiért érdemes kiszakadni.
+              Az aquapark, ahol nem tudod, melyikkel kezdd · és másnap ugyanez a probléma.
             </p>
           </div>
 
