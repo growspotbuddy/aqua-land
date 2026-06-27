@@ -31,9 +31,10 @@ export default function Home() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
+        overflow: 'visible',
       }}>
-        <a href="#" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/photos/logo.png" alt="Aqua-Land" style={{ height: '42px', width: 'auto' }} />
+        <a href="#" style={{ display: 'flex', alignItems: 'center', position: 'relative', zIndex: 101 }}>
+          <img src="/photos/logo.png" alt="Aqua-Land" style={{ height: '80px', width: 'auto' }} />
         </a>
         <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
           <a href="#attrakciok" style={{ color: '#0F172A', textDecoration: 'none', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-barlow), Barlow, sans-serif' }}>Attrakciók</a>
