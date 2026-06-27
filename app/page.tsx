@@ -71,51 +71,50 @@ export default function Home() {
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(249,115,22,0.38)', mixBlendMode: 'multiply' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(15,23,42,0.72) 0%, rgba(15,23,42,0.30) 60%, rgba(15,23,42,0.10) 100%)' }} />
 
-        {/* Hero content */}
-        <div style={{ position: 'relative', zIndex: 2, width: '100%' }}>
-          <div style={{ padding: '0 80px 14px', maxWidth: '780px' }}>
-            {/* Badge */}
-            <div style={{
-              display: 'inline-block',
-              background: '#F97316',
-              color: '#FFFFFF',
-              fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
-              fontSize: '13px',
-              fontWeight: 700,
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-              padding: '5px 14px',
-              borderRadius: '50px',
-              marginBottom: '14px',
-            }}>
-              ★ FŐSZEZÓN NYITVA
-            </div>
-            <h1 style={{
-              fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
-              fontSize: '80px',
-              fontWeight: 900,
-              color: '#FFFFFF',
-              textTransform: 'uppercase',
-              lineHeight: 0.95,
-              textShadow: '0 2px 24px rgba(0,0,0,0.4)',
-              marginBottom: '14px',
-            }}>
-              A legjobb<br />nap az évből?<br />Ma az.
-            </h1>
-            <p style={{
-              fontSize: '16px',
-              fontWeight: 500,
-              color: 'rgba(255,255,255,0.9)',
-              maxWidth: '560px',
-              lineHeight: 1.4,
-              fontFamily: 'var(--font-barlow), Barlow, sans-serif',
-              margin: 0,
-            }}>
-              Aquapark, termál, mozi a vízben · hozd el mindenkit, és csináljatok emlékeket.
-            </p>
+        {/* Hero text — absolute, upper-left, clear of booking bar */}
+        <div style={{ position: 'absolute', top: '60px', left: '80px', maxWidth: '720px', zIndex: 2 }}>
+          <div style={{
+            display: 'inline-block',
+            background: '#F97316',
+            color: '#FFFFFF',
+            fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
+            fontSize: '13px',
+            fontWeight: 700,
+            letterSpacing: '0.18em',
+            textTransform: 'uppercase',
+            padding: '5px 14px',
+            borderRadius: '50px',
+            marginBottom: '18px',
+          }}>
+            ★ FŐSZEZÓN NYITVA
           </div>
+          <h1 style={{
+            fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
+            fontSize: '96px',
+            fontWeight: 900,
+            color: '#FFFFFF',
+            textTransform: 'uppercase',
+            lineHeight: 0.95,
+            textShadow: '0 2px 24px rgba(0,0,0,0.4)',
+            marginBottom: '20px',
+          }}>
+            A legjobb<br />nap az évből?<br />Ma az.
+          </h1>
+          <p style={{
+            fontSize: '18px',
+            fontWeight: 500,
+            color: 'rgba(255,255,255,0.9)',
+            maxWidth: '560px',
+            lineHeight: 1.5,
+            fontFamily: 'var(--font-barlow), Barlow, sans-serif',
+            margin: 0,
+          }}>
+            Aquapark, termál, mozi a vízben · hozd el mindenkit, és csináljatok emlékeket.
+          </p>
+        </div>
 
-          {/* BookingBar - glassmorphism panel floating over hero photo */}
+        {/* BookingBar — pinned to hero bottom, glassmorphism panel */}
+        <div style={{ position: 'relative', zIndex: 2, width: '100%' }}>
           <div style={{ padding: '0 48px 20px', width: '100%', boxSizing: 'border-box' }}>
             <BookingBar />
           </div>
