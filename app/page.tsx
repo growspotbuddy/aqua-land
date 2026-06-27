@@ -4,23 +4,23 @@ export default function Home() {
   return (
     <main>
       {/* 1. TopBar */}
-      <div style={{
+      <div className="topbar" style={{
         background: '#0285C7',
         padding: '8px 60px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-        <span style={{ color: '#FFFFFF', fontSize: '13px', fontWeight: 600, fontFamily: 'var(--font-barlow), Barlow, sans-serif' }}>
+        <span className="topbar-hours" style={{ color: '#FFFFFF', fontSize: '13px', fontWeight: 600, fontFamily: 'var(--font-barlow), Barlow, sans-serif' }}>
           ☀ NYITVA: H-V 9:00-20:00 &nbsp;|&nbsp; TERMÁL: 10:00-21:00
         </span>
-        <a href="#jegyek" style={{ color: '#FBBF24', fontSize: '13px', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-barlow), Barlow, sans-serif' }}>
+        <a href="#jegyek" className="topbar-cta" style={{ color: '#FBBF24', fontSize: '13px', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-barlow), Barlow, sans-serif' }}>
           Jegyvásárlás →
         </a>
       </div>
 
       {/* 2. Sticky Nav */}
-      <nav style={{
+      <nav className="nav" style={{
         background: '#FFFFFF',
         height: '72px',
         boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
@@ -33,16 +33,16 @@ export default function Home() {
         justifyContent: 'space-between',
         overflow: 'visible',
       }}>
-        <a href="#" style={{ display: 'flex', alignItems: 'center', position: 'relative', zIndex: 101 }}>
+        <a href="#" className="nav-logo" style={{ display: 'flex', alignItems: 'center', position: 'relative', zIndex: 101 }}>
           <img src="/photos/logo.png" alt="Aqua-Land" style={{ height: '80px', width: 'auto' }} />
         </a>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+        <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
           <a href="#attrakciok" style={{ color: '#0F172A', textDecoration: 'none', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-barlow), Barlow, sans-serif' }}>Attrakciók</a>
           <a href="#termal" style={{ color: '#0F172A', textDecoration: 'none', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-barlow), Barlow, sans-serif' }}>Termál</a>
           <a href="#arak" style={{ color: '#0F172A', textDecoration: 'none', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-barlow), Barlow, sans-serif' }}>Árak</a>
           <a href="#szallas" style={{ color: '#0F172A', textDecoration: 'none', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-barlow), Barlow, sans-serif' }}>Szállás</a>
           <a href="#kapcsolat" style={{ color: '#0F172A', textDecoration: 'none', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-barlow), Barlow, sans-serif' }}>Kapcsolat</a>
-          <a href="#jegyek" style={{
+          <a href="#jegyek" className="nav-cta" style={{
             background: '#F97316',
             color: '#FFFFFF',
             textDecoration: 'none',
@@ -59,12 +59,14 @@ export default function Home() {
       </nav>
 
       {/* 3. Hero — height = viewport minus topbar(~36px) + nav(72px) so fold lands exactly at section bottom */}
-      <section id="hero" style={{
+      <section id="hero" className="hero" style={{
         height: 'calc(100vh - 108px)',
         minHeight: '580px',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
         alignItems: 'flex-end',
       }}>
         {/* Background layers */}
@@ -73,7 +75,7 @@ export default function Home() {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(15,23,42,0.72) 0%, rgba(15,23,42,0.30) 60%, rgba(15,23,42,0.10) 100%)' }} />
 
         {/* Hero text — absolute, upper-left, clear of booking bar */}
-        <div style={{ position: 'absolute', top: '60px', left: '80px', maxWidth: '720px', zIndex: 2 }}>
+        <div className="hero-text" style={{ position: 'absolute', top: '60px', left: '80px', maxWidth: '720px', zIndex: 2 }}>
           <div style={{
             display: 'inline-block',
             background: '#F97316',
@@ -89,7 +91,7 @@ export default function Home() {
           }}>
             ★ FŐSZEZÓN NYITVA
           </div>
-          <h1 style={{
+          <h1 className="hero-headline" style={{
             fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
             fontSize: '96px',
             fontWeight: 900,
@@ -101,7 +103,7 @@ export default function Home() {
           }}>
             A legjobb<br />nap az évből?<br />Ma az.
           </h1>
-          <p style={{
+          <p className="hero-sub" style={{
             fontSize: '18px',
             fontWeight: 500,
             color: 'rgba(255,255,255,0.9)',
@@ -115,15 +117,13 @@ export default function Home() {
         </div>
 
         {/* BookingBar — pinned to hero bottom, glassmorphism panel */}
-        <div style={{ position: 'relative', zIndex: 2, width: '100%' }}>
-          <div style={{ padding: '0 48px 20px', width: '100%', boxSizing: 'border-box' }}>
-            <BookingBar />
-          </div>
+        <div className="hero-booking-wrap" style={{ position: 'relative', zIndex: 2, width: '100%', padding: '0 48px 20px', boxSizing: 'border-box' }}>
+          <BookingBar />
         </div>
       </section>
 
       {/* 5. Price Strip */}
-      <section id="arak" style={{
+      <section id="arak" className="price-strip" style={{
         background: '#F97316',
         padding: '0 80px 20px',
         height: '72px',
@@ -132,7 +132,7 @@ export default function Home() {
         alignItems: 'center',
         clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 20px), 0 100%)',
       }}>
-        <p style={{
+        <p className="price-strip-text" style={{
           fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
           fontSize: '22px',
           fontWeight: 700,
@@ -143,7 +143,7 @@ export default function Home() {
         }}>
           NAPI BELÉPŐ MÁR <strong style={{ color: '#FBBF24' }}>2 990 FT-TÓL</strong> · A PIHENÉS SOSEM VOLT ENNYIRE ELÉRHETŐ.
         </p>
-        <a href="#arak" style={{
+        <a href="#arak" className="price-strip-btn" style={{
           background: '#FFFFFF',
           color: '#F97316',
           textDecoration: 'none',
@@ -161,7 +161,7 @@ export default function Home() {
       </section>
 
       {/* 6. Segmentation */}
-      <section style={{
+      <section className="seg-section" style={{
         background: '#0285C7',
         padding: '80px 80px 100px',
         marginTop: '-20px',
@@ -178,7 +178,7 @@ export default function Home() {
             Mindenki megtalálja a magáét
           </span>
         </div>
-        <h2 style={{
+        <h2 className="seg-title" style={{
           fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
           fontSize: '52px',
           fontWeight: 900,
@@ -190,13 +190,13 @@ export default function Home() {
           Válaszd ki a napod!
         </h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+        <div className="seg-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
           {[
             { img: '/photos/gyerek-paradicsom.jpg', badge: 'Gyerekeknek', title: 'Gyerekparadicsom', text: 'Csúszdák, vizes játékok, vidámság egész nap · a kicsik imádják.' },
             { img: '/photos/hero-main.jpg', badge: 'Felnőtteknek', title: 'Töltsd fel magad', text: 'Termálvíz, onsen, floating · ahol a test és az elme megpihen.' },
             { img: '/photos/people2.jpg', badge: 'Adrenalin', title: 'Nem unatkozunk itt', text: 'A legmagasabb csúszdák, a legtöbb pálya · adrenalin a tetőfokig.' },
           ].map((card, i) => (
-            <div key={i} style={{
+            <div key={i} className="seg-card" style={{
               height: '380px',
               borderRadius: '12px',
               overflow: 'hidden',
@@ -241,7 +241,7 @@ export default function Home() {
       </section>
 
       {/* 7. Attractions */}
-      <section id="attrakciok" style={{
+      <section id="attrakciok" className="attractions-section" style={{
         background: '#0F172A',
         clipPath: 'polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%)',
         marginTop: '-40px',
@@ -259,7 +259,7 @@ export default function Home() {
             Ami itt vár rád
           </span>
         </div>
-        <h2 style={{
+        <h2 className="attractions-title" style={{
           fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
           fontSize: '56px',
           fontWeight: 900,
@@ -272,7 +272,7 @@ export default function Home() {
           Ami itt vár rád · minden, ami kell.
         </h2>
 
-        <div style={{
+        <div className="attractions-grid" style={{
           display: 'grid',
           gridTemplateColumns: '1.2fr 1fr 1fr',
           gridTemplateRows: '260px 260px',
@@ -322,24 +322,24 @@ export default function Home() {
       </section>
 
       {/* 8. Social Proof */}
-      <section style={{
+      <section className="social-proof-section" style={{
         background: '#FBBF24',
         clipPath: 'polygon(0 0, 100% 40px, 100% 100%, 0 100%)',
         marginTop: '-40px',
         padding: '100px 80px 60px',
       }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
+        <div className="social-proof-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
           {[
             { num: '500 000+', label: 'látogató évente' },
             { num: '25+', label: 'éve a kedvencetek' },
             { num: '15+', label: 'attrakció' },
           ].map((item, i) => (
-            <div key={i} style={{
+            <div key={i} className="social-proof-item" style={{
               textAlign: 'center',
               borderLeft: i > 0 ? '2px solid rgba(15,23,42,0.15)' : 'none',
               padding: '0 40px',
             }}>
-              <div style={{
+              <div className="social-proof-num" style={{
                 fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
                 fontSize: '72px',
                 fontWeight: 900,
@@ -366,7 +366,7 @@ export default function Home() {
       </section>
 
       {/* 9. Second CTA */}
-      <section style={{
+      <section className="second-cta-section" style={{
         background: '#0285C7',
         padding: '80px 80px 120px',
         clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 40px), 0 100%)',
@@ -387,7 +387,7 @@ export default function Home() {
           }}>
             Ne tervezgesd tovább
           </div>
-          <h2 style={{
+          <h2 className="second-cta-headline" style={{
             fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
             fontSize: '60px',
             fontWeight: 900,
@@ -415,7 +415,7 @@ export default function Home() {
           </a>
         </div>
         <div>
-          <div style={{
+          <div className="second-cta-img-wrap" style={{
             height: '480px',
             borderRadius: '16px',
             overflow: 'hidden',
@@ -428,7 +428,7 @@ export default function Home() {
       </section>
 
       {/* 10. Thermal */}
-      <section id="termal" style={{
+      <section id="termal" className="thermal-section" style={{
         background: '#FFFFFF',
         padding: '140px 80px 100px',
         marginTop: '-40px',
@@ -437,7 +437,7 @@ export default function Home() {
         gap: '60px',
         alignItems: 'center',
       }}>
-        <div style={{
+        <div className="thermal-img-wrap" style={{
           height: '460px',
           borderRadius: '16px',
           overflow: 'hidden',
@@ -461,7 +461,7 @@ export default function Home() {
           }}>
             Wellness &amp; Termál
           </div>
-          <h2 style={{
+          <h2 className="thermal-headline" style={{
             fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
             fontSize: '48px',
             fontWeight: 900,
@@ -498,7 +498,7 @@ export default function Home() {
       </section>
 
       {/* 11. Events */}
-      <section style={{
+      <section className="events-section" style={{
         background: '#F97316',
         clipPath: 'polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%)',
         marginTop: '-40px',
@@ -515,7 +515,7 @@ export default function Home() {
         }}>
           Programok &amp; Ajánlatok
         </div>
-        <h2 style={{
+        <h2 className="events-headline" style={{
           fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
           fontSize: '72px',
           fontWeight: 900,
@@ -539,13 +539,13 @@ export default function Home() {
           Szezonális programok, különleges belépők, wellness weekendek · mindig van ok visszajönni.
         </p>
         {/* 3-column photo event cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '40px' }}>
+        <div className="events-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '40px' }}>
           {[
             { date: 'Júl 4-6', title: 'Splash Festival', text: '3 napos vizes fesztivál, zenével, DJ-kkel és éjszakai úszással.', photo: '/photos/event-splash-festival.jpg' },
             { date: 'Júl 12', title: 'Aqua Cinema éjjel', text: 'Filmvetítés a vízben, naplemente után. Hozd a matracod!', photo: '/photos/event-aqua-cinema.jpg' },
             { date: 'Aug 1-31', title: 'Wellness hónap', text: 'Termál belépő + reggeli csomag kedvezményes áron egész augusztusban.', photo: '/photos/event-wellness.jpg' },
           ].map((ev, i) => (
-            <div key={i} style={{
+            <div key={i} className="event-card" style={{
               position: 'relative',
               height: '320px',
               borderRadius: '12px',
@@ -608,7 +608,7 @@ export default function Home() {
       </section>
 
       {/* 12. Accommodation */}
-      <section id="szallas" style={{
+      <section id="szallas" className="accommodation-section" style={{
         position: 'relative',
         padding: '120px 80px 100px',
         marginTop: '-40px',
@@ -628,7 +628,7 @@ export default function Home() {
           }}>
             Pihenj tovább
           </div>
-          <h2 style={{
+          <h2 className="accommodation-headline" style={{
             fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
             fontSize: '56px',
             fontWeight: 900,
@@ -640,7 +640,7 @@ export default function Home() {
             Maradj éjszakára is · megérdemled.
           </h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+          <div className="accommodation-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
             {[
               { icon: '🏨', title: 'Hotel szoba', text: 'Park-view szobák, minden reggel a csúszdák előtt.' },
               { icon: '🌿', title: 'Wellness csomag', text: 'Szállás + termál + reggeli. Az igazi feltöltődés.' },
@@ -675,7 +675,7 @@ export default function Home() {
       </section>
 
       {/* 13. Practical Info */}
-      <section id="kapcsolat" style={{
+      <section id="kapcsolat" className="practical-section" style={{
         background: '#FFFFFF',
         padding: '80px',
       }}>
@@ -691,7 +691,7 @@ export default function Home() {
             Mielőtt jössz
           </span>
         </div>
-        <h2 style={{
+        <h2 className="practical-title" style={{
           fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
           fontSize: '48px',
           fontWeight: 900,
@@ -703,7 +703,7 @@ export default function Home() {
           Minden, amit tudni érdemes a látogatás előtt
         </h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
+        <div className="practical-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
           {/* Column 1 - Nyitvatartás */}
           <div style={{ textAlign: 'center', padding: '40px 28px', background: '#f8fafc', borderRadius: '16px' }}>
             <div style={{
@@ -789,7 +789,7 @@ export default function Home() {
       </section>
 
       {/* 14. Gallery */}
-      <section style={{
+      <section className="gallery-section" style={{
         background: '#f0f9ff',
         padding: '80px',
       }}>
@@ -805,7 +805,7 @@ export default function Home() {
             Képgaléria
           </span>
         </div>
-        <h2 style={{
+        <h2 className="gallery-title" style={{
           fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
           fontSize: '48px',
           fontWeight: 900,
@@ -817,7 +817,7 @@ export default function Home() {
           Ahogy mások látták · és ahogy te fogod.
         </h2>
 
-        <div style={{
+        <div className="gallery-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
           gridTemplateRows: 'repeat(2, 200px)',
@@ -848,12 +848,12 @@ export default function Home() {
       </section>
 
       {/* 15. Footer */}
-      <footer style={{
+      <footer className="footer" style={{
         background: '#0F172A',
         borderTop: '6px solid #0285C7',
         padding: '72px 80px 48px',
       }}>
-        <div style={{
+        <div className="footer-grid" style={{
           display: 'grid',
           gridTemplateColumns: '1.5fr 1fr 1fr 1fr',
           gap: '60px',
@@ -900,6 +900,7 @@ export default function Home() {
                   fontSize: '13px',
                   fontFamily: 'var(--font-barlow), Barlow, sans-serif',
                   outline: 'none',
+                  minWidth: 0,
                 }}
               />
               <button style={{
@@ -951,7 +952,7 @@ export default function Home() {
         </div>
 
         {/* Footer bottom */}
-        <div style={{
+        <div className="footer-bottom" style={{
           borderTop: '1px solid rgba(255,255,255,0.1)',
           paddingTop: '28px',
           display: 'flex',
@@ -961,7 +962,7 @@ export default function Home() {
           <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '13px', fontFamily: 'var(--font-barlow), Barlow, sans-serif' }}>
             © 2026 Aqua-Land. Minden jog fenntartva.
           </span>
-          <div style={{ display: 'flex', gap: '24px' }}>
+          <div className="footer-socials" style={{ display: 'flex', gap: '24px' }}>
             {['Facebook', 'Instagram', 'TikTok', 'YouTube'].map(social => (
               <a key={social} href="#" style={{
                 color: 'rgba(255,255,255,0.4)',

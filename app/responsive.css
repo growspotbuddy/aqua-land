@@ -1,0 +1,349 @@
+/* ============================================================
+   Aqua-Land — Mobile Responsive Overrides
+   Breakpoints: 768px (tablet) | 480px (mobile)
+   Strategy: !important overrides on element + class selectors
+   ============================================================ */
+
+/* ── Global overflow guard ─────────────────────────────────── */
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+/* ── TopBar ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 8px 16px !important;
+  }
+  .topbar-hours {
+    display: none !important;
+  }
+  .topbar-cta {
+    margin-left: auto !important;
+  }
+}
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 16px !important;
+    height: 60px !important;
+  }
+  .nav-logo img {
+    height: 50px !important;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  .nav-cta {
+    display: flex !important;
+    padding: 10px 18px !important;
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-cta {
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* ── Hero ─────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 520px !important;
+    height: auto !important;
+    padding-bottom: 20px !important;
+  }
+  .hero-text {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    padding: 20px 16px 0 !important;
+    max-width: 100% !important;
+    z-index: 2 !important;
+  }
+  .hero-headline {
+    font-size: 56px !important;
+    line-height: 0.95 !important;
+  }
+  .hero-sub {
+    font-size: 15px !important;
+  }
+  .hero-booking-wrap {
+    padding: 12px 8px 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 44px !important;
+  }
+  .hero-text {
+    padding: 16px 12px 0 !important;
+  }
+}
+
+/* ── Price Strip ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .price-strip {
+    clip-path: none !important;
+    height: auto !important;
+    padding: 16px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  .price-strip-text {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+  .price-strip-btn {
+    margin-left: 0 !important;
+    align-self: flex-start !important;
+  }
+}
+
+/* ── Segmentation section ────────────────────────────────────── */
+@media (max-width: 768px) {
+  .seg-section {
+    padding: 48px 16px 60px !important;
+    margin-top: 0 !important;
+  }
+  .seg-title {
+    font-size: 40px !important;
+  }
+  .seg-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .seg-card {
+    height: 260px !important;
+  }
+}
+
+/* ── Attractions ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .attractions-section {
+    clip-path: none !important;
+    margin-top: 0 !important;
+    padding: 60px 16px 80px !important;
+  }
+  .attractions-title {
+    font-size: 40px !important;
+    max-width: 100% !important;
+  }
+  .attractions-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+  }
+  .attractions-grid > div {
+    grid-row: auto !important;
+    grid-column: auto !important;
+    height: 240px !important;
+  }
+}
+
+/* ── Social Proof ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .social-proof-section {
+    clip-path: none !important;
+    margin-top: 0 !important;
+    padding: 48px 16px 40px !important;
+  }
+  .social-proof-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .social-proof-item {
+    border-left: none !important;
+    border-top: 2px solid rgba(15,23,42,0.15) !important;
+    padding: 24px 16px !important;
+    text-align: center !important;
+  }
+  .social-proof-item:first-child {
+    border-top: none !important;
+    padding-top: 0 !important;
+  }
+  .social-proof-num {
+    font-size: 56px !important;
+  }
+}
+
+/* ── Second CTA ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .second-cta-section {
+    clip-path: none !important;
+    padding: 48px 16px 60px !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .second-cta-headline {
+    font-size: 44px !important;
+  }
+  .second-cta-img-wrap {
+    height: 260px !important;
+    transform: none !important;
+  }
+}
+
+/* ── Thermal ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .thermal-section {
+    padding: 48px 16px 60px !important;
+    margin-top: 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .thermal-img-wrap {
+    height: 260px !important;
+  }
+  .thermal-headline {
+    font-size: 36px !important;
+  }
+}
+
+/* ── Events ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .events-section {
+    clip-path: none !important;
+    margin-top: 0 !important;
+    padding: 60px 16px 80px !important;
+  }
+  .events-headline {
+    font-size: 52px !important;
+  }
+  .events-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .event-card {
+    height: 260px !important;
+  }
+}
+
+/* ── Accommodation ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .accommodation-section {
+    padding: 60px 16px 60px !important;
+    margin-top: 0 !important;
+  }
+  .accommodation-headline {
+    font-size: 40px !important;
+  }
+  .accommodation-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+}
+
+/* ── Practical Info ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .practical-section {
+    padding: 48px 16px !important;
+  }
+  .practical-title {
+    font-size: 36px !important;
+  }
+  .practical-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* ── Gallery ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 48px 16px !important;
+  }
+  .gallery-title {
+    font-size: 36px !important;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(4, 160px) !important;
+  }
+  .gallery-grid > div {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 16px 32px !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    margin-bottom: 32px !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+  }
+  .footer-socials {
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+  }
+}
+
+/* ── BookingBar ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .booking-panel {
+    border-radius: 10px !important;
+  }
+  .booking-tabs {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .booking-tab-btn {
+    padding: 12px 16px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+  }
+  .booking-body {
+    padding: 14px 14px 16px !important;
+  }
+  .booking-fields-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .booking-field-wrap {
+    width: 100% !important;
+  }
+  .booking-field {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .booking-action-btn {
+    width: 100% !important;
+    margin-left: 0 !important;
+    justify-content: center !important;
+    padding: 14px !important;
+  }
+  .booking-arrow-sep {
+    display: none !important;
+  }
+  .booking-subtabs {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+}
+
+/* ── Clamp large negative margins ─────────────────────────────── */
+@media (max-width: 768px) {
+  main > section,
+  main > div,
+  main > nav,
+  main > footer {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
