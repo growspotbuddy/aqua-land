@@ -75,7 +75,7 @@ export default function Home() {
 
         {/* Hero content — centered vertically, text + booking as one block */}
         <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', width: '100%' }}>
-          <div className="hero-text" style={{ padding: '0 80px', maxWidth: '720px' }}>
+          <div className="hero-text" style={{ padding: '0 80px', maxWidth: '1100px', width: '100%' }}>
             <h1 className="hero-headline" style={{
               fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
               fontSize: '96px',
@@ -86,13 +86,13 @@ export default function Home() {
               textShadow: '0 2px 24px rgba(0,0,0,0.4)',
               marginBottom: '20px',
             }}>
-              Csúszda, termál,<br />mozi a vízben.<br />Egyszerre, egy helyen.
+              Csúszda, termál, mozi a vízben.<br />Egyszerre, egy helyen.
             </h1>
             <p className="hero-sub" style={{
               fontSize: '18px',
               fontWeight: 500,
               color: 'rgba(255,255,255,0.9)',
-              maxWidth: '560px',
+              maxWidth: '680px',
               lineHeight: 1.5,
               fontFamily: 'var(--font-barlow), Barlow, sans-serif',
               margin: 0,
