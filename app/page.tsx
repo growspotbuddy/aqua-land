@@ -66,59 +66,45 @@ export default function Home() {
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'flex-end',
+        justifyContent: 'center',
       }}>
         {/* Background layers */}
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/photos/csuszda.jpg')", backgroundSize: 'cover', backgroundPosition: 'center top' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(249,115,22,0.38)', mixBlendMode: 'multiply' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(15,23,42,0.72) 0%, rgba(15,23,42,0.30) 60%, rgba(15,23,42,0.10) 100%)' }} />
 
-        {/* Hero text — absolute, upper-left, clear of booking bar */}
-        <div className="hero-text" style={{ position: 'absolute', top: '60px', left: '80px', maxWidth: '720px', zIndex: 2 }}>
-          <div style={{
-            display: 'inline-block',
-            background: '#F97316',
-            color: '#FFFFFF',
-            fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
-            fontSize: '13px',
-            fontWeight: 700,
-            letterSpacing: '0.18em',
-            textTransform: 'uppercase',
-            padding: '5px 14px',
-            borderRadius: '50px',
-            marginBottom: '18px',
-          }}>
-            ★ FŐSZEZÓN NYITVA
+        {/* Hero content — centered vertically, text + booking as one block */}
+        <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', width: '100%' }}>
+          <div className="hero-text" style={{ padding: '0 80px', maxWidth: '720px' }}>
+            <h1 className="hero-headline" style={{
+              fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
+              fontSize: '96px',
+              fontWeight: 900,
+              color: '#FFFFFF',
+              textTransform: 'uppercase',
+              lineHeight: 0.95,
+              textShadow: '0 2px 24px rgba(0,0,0,0.4)',
+              marginBottom: '20px',
+            }}>
+              Ide kell jönni<br />legalább egyszer.
+            </h1>
+            <p className="hero-sub" style={{
+              fontSize: '18px',
+              fontWeight: 500,
+              color: 'rgba(255,255,255,0.9)',
+              maxWidth: '560px',
+              lineHeight: 1.5,
+              fontFamily: 'var(--font-barlow), Barlow, sans-serif',
+              margin: 0,
+            }}>
+              Csúszdák, termálvíz, film a vízben · egy helyen minden, amiért érdemes kiszakadni.
+            </p>
           </div>
-          <h1 className="hero-headline" style={{
-            fontFamily: '"Barlow Condensed", var(--font-condensed), sans-serif',
-            fontSize: '96px',
-            fontWeight: 900,
-            color: '#FFFFFF',
-            textTransform: 'uppercase',
-            lineHeight: 0.95,
-            textShadow: '0 2px 24px rgba(0,0,0,0.4)',
-            marginBottom: '20px',
-          }}>
-            A legjobb<br />nap az évből?<br />Ma az.
-          </h1>
-          <p className="hero-sub" style={{
-            fontSize: '18px',
-            fontWeight: 500,
-            color: 'rgba(255,255,255,0.9)',
-            maxWidth: '560px',
-            lineHeight: 1.5,
-            fontFamily: 'var(--font-barlow), Barlow, sans-serif',
-            margin: 0,
-          }}>
-            Aquapark, termál, mozi a vízben · hozd el mindenkit, és csináljatok emlékeket.
-          </p>
-        </div>
 
-        {/* BookingBar — pinned to hero bottom, glassmorphism panel */}
-        <div className="hero-booking-wrap" style={{ position: 'relative', zIndex: 2, width: '100%', padding: '0 48px 20px', boxSizing: 'border-box' }}>
-          <BookingBar />
+          {/* BookingBar — below text, small gap */}
+          <div className="hero-booking-wrap" style={{ marginTop: '24px', position: 'relative', zIndex: 2, width: '100%', padding: '0 48px', boxSizing: 'border-box' }}>
+            <BookingBar />
+          </div>
         </div>
       </section>
 
